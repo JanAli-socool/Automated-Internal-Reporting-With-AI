@@ -1,8 +1,9 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 const phases = [
   {
-    icon: "🔍",
+    icon: "database" as const,
     title: "Data Collection Layer",
     description: "How data is sourced and ingested",
     details: [
@@ -14,7 +15,7 @@ const phases = [
     ],
   },
   {
-    icon: "✅",
+    icon: "check" as const,
     title: "Validation & Transformation",
     description: "Ensuring data quality before processing",
     details: [
@@ -26,7 +27,7 @@ const phases = [
     ],
   },
   {
-    icon: "🤖",
+    icon: "bot" as const,
     title: "AI Summarization Engine (Vendor-Proposed LLM)",
     description: "Generating intelligent management insights using the proposed AI/LLM service",
     details: [
@@ -40,7 +41,7 @@ const phases = [
     ],
   },
   {
-    icon: "📊",
+    icon: "chart" as const,
     title: "Report Generation & Delivery",
     description: "Formatting and distributing via existing tools",
     details: [
@@ -52,7 +53,7 @@ const phases = [
     ],
   },
   {
-    icon: "⚙️",
+    icon: "settings" as const,
     title: "Monitoring & Error Handling",
     description: "Keeping the system reliable",
     details: [
@@ -87,7 +88,9 @@ export default function TechnicalApproach() {
 
             <div className="flex flex-col lg:flex-row lg:items-start gap-6">
               <div className="flex items-center gap-4 lg:w-72 flex-shrink-0">
-                <span className="text-4xl">{phase.icon}</span>
+                <span className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-md">
+                  <Icon name={phase.icon} size={22} className="text-white" />
+                </span>
                 <div>
                   <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                     Layer {index + 1}
@@ -113,7 +116,7 @@ export default function TechnicalApproach() {
 
       {/* Workflow summary */}
       <div className="mt-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
-        <h3 className="text-xl font-bold mb-4">🔄 End-to-End Workflow</h3>
+        <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Icon name="workflow" size={20} className="text-blue-200" /> End-to-End Workflow</h3>
         <div className="flex flex-wrap items-center gap-3 text-sm">
           {[
             "Google Sheets",

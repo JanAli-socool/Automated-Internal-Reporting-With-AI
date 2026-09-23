@@ -1,8 +1,9 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 const deliverables = [
   {
-    icon: "🔍",
+    icon: "search" as const,
     title: "Environment Validation Report",
     included: [
       "Audit of current Google Sheets, Workspace, and Looker Studio setup",
@@ -14,7 +15,7 @@ const deliverables = [
     phase: "Discovery",
   },
   {
-    icon: "📋",
+    icon: "clipboard" as const,
     title: "Requirements & Data-Source Map",
     included: [
       "Complete inventory of all Google Sheets data sources",
@@ -25,7 +26,7 @@ const deliverables = [
     phase: "Discovery",
   },
   {
-    icon: "⚙️",
+    icon: "settings" as const,
     title: "Automated Reporting Workflow",
     included: [
       "Cloud Functions / Apps Script automation pipeline",
@@ -36,7 +37,7 @@ const deliverables = [
     phase: "Development",
   },
   {
-    icon: "📄",
+    icon: "file" as const,
     title: "Standardized Internal Report Output",
     included: [
       "Templated report format with consistent structure",
@@ -47,7 +48,7 @@ const deliverables = [
     phase: "Development",
   },
   {
-    icon: "📊",
+    icon: "dashboard" as const,
     title: "Dashboard (Looker Studio)",
     included: [
       "Interactive Looker Studio dashboard connected to automated data",
@@ -58,7 +59,7 @@ const deliverables = [
     phase: "Development",
   },
   {
-    icon: "🛡️",
+    icon: "shield" as const,
     title: "Validation & Error-Handling Process",
     included: [
       "Input validation rules for all data sources",
@@ -69,7 +70,7 @@ const deliverables = [
     phase: "Development",
   },
   {
-    icon: "📚",
+    icon: "book" as const,
     title: "Technical Documentation & Handoff",
     included: [
       "Architecture documentation with data flow diagrams",
@@ -144,7 +145,7 @@ export default function ScopeAndDeliverables() {
             className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-blue-200 transition-colors"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-3xl">{d.icon}</span>
+              <span className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0"><Icon name={d.icon} size={18} className="text-white" /></span>
               <div>
                 <h3 className="font-bold text-slate-900">{d.title}</h3>
                 <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
@@ -167,7 +168,7 @@ export default function ScopeAndDeliverables() {
       {/* Discovery-Dependent Scope */}
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-8 mb-8">
         <h3 className="text-lg font-bold text-amber-900 mb-2 flex items-center gap-2">
-          <span>🔍</span> Scope Items to Be Assessed During Discovery
+          <Icon name="search" size={20} className="text-amber-700" /> Scope Items to Be Assessed During Discovery
         </h3>
         <p className="text-sm text-amber-800 mb-6">
           The following items cannot be definitively scoped in or out until I validate the current environment.
@@ -201,7 +202,7 @@ export default function ScopeAndDeliverables() {
       {/* Genuine Exclusions */}
       <div className="bg-slate-100 border border-slate-300 rounded-2xl p-8">
         <h3 className="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">
-          <span>🚫</span> Definitive Exclusions
+          <Icon name="xcircle" size={20} className="text-slate-600" /> Definitive Exclusions
         </h3>
         <p className="text-sm text-slate-500 mb-6">
           These items are genuinely outside the scope of this project regardless of discovery findings.

@@ -1,3 +1,4 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 const strategyCards = [
@@ -282,7 +283,7 @@ export default function AIRecommendation() {
 
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
         <div className="flex items-start gap-3">
-          <span className="text-2xl flex-shrink-0">⚠️</span>
+          <Icon name="warning" size={22} className="text-amber-600 flex-shrink-0" />
           <div>
             <h4 className="font-bold text-amber-900 mb-1">Practical Note on Cost and Access</h4>
             <p className="text-sm text-amber-800 leading-relaxed">

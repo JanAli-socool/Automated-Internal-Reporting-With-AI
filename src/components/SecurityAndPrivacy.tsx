@@ -1,8 +1,9 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 const measures = [
   {
-    icon: "🔐",
+    icon: "key" as const,
     title: "Authentication & Access Control",
     points: [
       "Google service accounts with minimal required permissions (principle of least privilege)",
@@ -12,7 +13,7 @@ const measures = [
     ],
   },
   {
-    icon: "🛡️",
+    icon: "shield" as const,
     title: "Data Protection in Transit & at Rest",
     points: [
       "All API calls over HTTPS/TLS 1.2+",
@@ -22,7 +23,7 @@ const measures = [
     ],
   },
   {
-    icon: "👁️",
+    icon: "eye" as const,
     title: "AI Model Data Handling",
     points: [
       "Only aggregated/anonymized data sent to LLM for summarization (not raw employee or customer records)",
@@ -32,7 +33,7 @@ const measures = [
     ],
   },
   {
-    icon: "📝",
+    icon: "file" as const,
     title: "Audit Trail & Retention",
     points: [
       "Complete logging of all pipeline executions with timestamps",
@@ -42,7 +43,7 @@ const measures = [
     ],
   },
   {
-    icon: "🔒",
+    icon: "lock" as const,
     title: "Data Separation & Auditability",
     points: [
       "All processing stays within TeamFicient's Google Cloud project / Workspace domain",
@@ -65,7 +66,7 @@ export default function SecurityAndPrivacy() {
         {measures.map((m, i) => (
           <div key={i} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
             <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-3">
-              <span className="text-2xl">{m.icon}</span>
+              <span className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-sm"><Icon name={m.icon} size={18} className="text-white" /></span>
               {m.title}
             </h3>
             <ul className="grid sm:grid-cols-2 gap-3">
@@ -82,7 +83,7 @@ export default function SecurityAndPrivacy() {
 
       <div className="mt-8 bg-slate-900 rounded-2xl p-8 text-white">
         <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-          <span className="text-2xl">⚠️</span> Key Commitment
+          <span className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0"><Icon name={"warning"} size={18} className="text-white" /></span> Key Commitment
         </h3>
         <p className="text-slate-300 leading-relaxed">
           I commit to treating all TeamFicient data with the highest level of confidentiality. 

@@ -1,3 +1,4 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 const risks = [
@@ -64,7 +65,7 @@ const assumptions = [
 
 const clientNeeds = [
   {
-    icon: "🔑",
+    icon: "key" as const,
     title: "Access & Credentials",
     items: [
       "Read access to all Google Sheets data sources used in reporting",
@@ -74,7 +75,7 @@ const clientNeeds = [
     ],
   },
   {
-    icon: "👤",
+    icon: "user" as const,
     title: "People & Communication",
     items: [
       "Designated project point of contact for day-to-day questions",
@@ -84,7 +85,7 @@ const clientNeeds = [
     ],
   },
   {
-    icon: "📖",
+    icon: "book" as const,
     title: "Information & Context",
     items: [
       "Existing report samples/templates currently used by management",
@@ -122,12 +123,12 @@ export default function RisksAndAssumptions() {
       {/* What we need from client */}
       <div className="mb-12">
         <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-          <span className="text-2xl">🤝</span> What I Need from TeamFicient (Client Requirements)
+          <span className="w-10 h-10 rounded-xl bg-blue-600 inline-flex items-center justify-center"><Icon name={"handshake"} size={18} className="text-white" /></span> What I Need from TeamFicient (Client Requirements)
         </h3>
         <div className="grid md:grid-cols-3 gap-6">
           {clientNeeds.map((need, i) => (
             <div key={i} className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-              <div className="text-3xl mb-3">{need.icon}</div>
+              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mb-3"><Icon name={need.icon} size={18} className="text-white" /></div>
               <h4 className="font-bold text-slate-900 mb-3">{need.title}</h4>
               <ul className="space-y-2">
                 {need.items.map((item, j) => (
@@ -145,7 +146,7 @@ export default function RisksAndAssumptions() {
       {/* Risks */}
       <div className="mb-12">
         <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-          <span className="text-2xl">⚠️</span> Risk Register
+          <span className="w-10 h-10 rounded-xl bg-blue-600 inline-flex items-center justify-center"><Icon name={"warning"} size={18} className="text-white" /></span> Risk Register
         </h3>
         <div className="space-y-4">
           {risks.map((r, i) => (
@@ -172,7 +173,7 @@ export default function RisksAndAssumptions() {
       {/* Assumptions */}
       <div>
         <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-          <span className="text-2xl">📌</span> Key Assumptions
+          <span className="w-10 h-10 rounded-xl bg-blue-600 inline-flex items-center justify-center"><Icon name={"compass"} size={18} className="text-white" /></span> Key Assumptions
         </h3>
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-8">
           <ul className="space-y-3">

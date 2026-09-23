@@ -1,5 +1,7 @@
 "use client";
 
+import Icon from "./Icon";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8">
@@ -18,7 +20,7 @@ export default function Footer() {
               onClick={() => window.print()}
               className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 no-print"
             >
-              📥 Download as PDF
+              Download as PDF
             </button>
             <a
               href="#executive-summary"
@@ -32,7 +34,7 @@ export default function Footer() {
         {/* Pre-Interview Questions */}
         <div className="bg-slate-800 rounded-2xl p-8 mb-12 text-left border border-slate-700">
           <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-            <span className="text-2xl">🗣️</span> Questions for Our Follow-Up Interview
+            <Icon name="message" size={22} className="text-blue-400" /> Questions for Our Follow-Up Interview
           </h3>
           <p className="text-slate-400 mb-6">
             The RFP mentions a follow-up interview to go over the details. To ensure we hit the ground running, I've prepared a few foundational discovery questions for our conversation:

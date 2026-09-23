@@ -1,9 +1,10 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 const currentStack = [
   {
     tool: "Google Sheets",
-    icon: "📗",
+    icon: "sheet" as const,
     status: "In Use",
     whatIllValidate: [
       "Number and structure of sheets used for reporting data",
@@ -15,7 +16,7 @@ const currentStack = [
   },
   {
     tool: "Google Workspace / Workspace Studio",
-    icon: "📧",
+    icon: "mail" as const,
     status: "In Use",
     whatIllValidate: [
       "Workspace edition (Business Starter/Standard/Plus/Enterprise) — affects API quotas and features",
@@ -27,7 +28,7 @@ const currentStack = [
   },
   {
     tool: "Looker Studio",
-    icon: "📊",
+    icon: "dashboard" as const,
     status: "In Use",
     whatIllValidate: [
       "Existing dashboards and reports — what's already built",
@@ -39,7 +40,7 @@ const currentStack = [
   },
   {
     tool: "AI/LLM Service",
-    icon: "🤖",
+    icon: "bot" as const,
     status: "To Be Proposed",
     whatIllValidate: [
       "No existing AI/LLM — this is proposed by me as the vendor (see Section 03)",
@@ -54,7 +55,7 @@ const currentStack = [
 const additionalIdentification = [
   {
     category: "APIs & Credentials",
-    icon: "🔑",
+    icon: "key" as const,
     items: [
       "Google Sheets API v4 — needs to be enabled in Google Cloud Console",
       "Google Drive API — for document management and archival",
@@ -64,7 +65,7 @@ const additionalIdentification = [
   },
   {
     category: "Hosting & Infrastructure",
-    icon: "☁️",
+    icon: "cloud" as const,
     items: [
       "Google Cloud Platform project — may need to be created if not existing",
       "Cloud Functions (serverless compute) — for pipeline execution",
@@ -74,7 +75,7 @@ const additionalIdentification = [
   },
   {
     category: "Licenses & Services",
-    icon: "📄",
+    icon: "file" as const,
     items: [
       "OpenAI API subscription (pay-per-use, no license fee)",
       "Google Cloud billing account (pay-per-use)",
@@ -84,7 +85,7 @@ const additionalIdentification = [
   },
   {
     category: "Integrations",
-    icon: "🔗",
+    icon: "link" as const,
     items: [
       "Google Sheets → Cloud Functions (data extraction trigger)",
       "Cloud Functions → AI/LLM API (summarization calls)",
@@ -105,7 +106,7 @@ export default function EnvironmentValidation() {
       {/* Current stack audit plan */}
       <div className="mb-12">
         <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-          <span className="text-2xl">🔍</span> Current Stack — What I Will Validate During Discovery
+          <span className="w-9 h-9 rounded-xl bg-blue-600 inline-flex items-center justify-center flex-shrink-0"><Icon name={"search"} size={16} className="text-white" /></span> Current Stack — What I Will Validate During Discovery
         </h3>
         <p className="text-sm text-slate-500 mb-6">
           Per the RFP: &quot;The vendor must validate the current environment during discovery and identify any
@@ -123,7 +124,7 @@ export default function EnvironmentValidation() {
               } shadow-sm`}
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">{tool.icon}</span>
+                <span className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0"><Icon name={tool.icon} size={18} className="text-white" /></span>
                 <div>
                   <h4 className="font-bold text-slate-900">{tool.tool}</h4>
                   <span
@@ -156,7 +157,7 @@ export default function EnvironmentValidation() {
       {/* Additional requirements identification */}
       <div className="mb-10">
         <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-          <span className="text-2xl">📋</span> Additional Requirements to Identify
+          <span className="w-9 h-9 rounded-xl bg-blue-600 inline-flex items-center justify-center flex-shrink-0"><Icon name={"clipboard"} size={16} className="text-white" /></span> Additional Requirements to Identify
         </h3>
         <p className="text-sm text-slate-500 mb-6">
           All proposed third-party platforms will be identified separately from development costs
@@ -168,7 +169,7 @@ export default function EnvironmentValidation() {
           {additionalIdentification.map((cat, i) => (
             <div key={i} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">{cat.icon}</span>
+                <span className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0"><Icon name={cat.icon} size={16} className="text-white" /></span>
                 <h4 className="font-bold text-slate-900">{cat.category}</h4>
               </div>
               <ul className="space-y-2">
@@ -186,7 +187,7 @@ export default function EnvironmentValidation() {
 
       {/* Discovery deliverable */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 text-white">
-        <h3 className="text-xl font-bold mb-4">📑 Discovery Phase Deliverable: Environment Validation Report</h3>
+        <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Icon name="scroll" size={20} className="text-blue-200" /> Discovery Phase Deliverable: Environment Validation Report</h3>
         <p className="text-blue-100 mb-4">
           At the end of Week 1 (Discovery), I will deliver a formal <strong>Environment Validation Report</strong> that includes:
         </p>

@@ -36,7 +36,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="font-bold text-lg text-blue-800 tracking-tight">
-            📋 Proposal
+            Proposal
           </a>
 
           {/* Desktop nav */}
@@ -54,7 +54,7 @@ export default function Navigation() {
               onClick={() => window.print()}
               className="ml-3 px-4 py-2 bg-blue-700 text-white text-sm font-medium rounded-lg hover:bg-blue-800 transition-colors"
             >
-              📥 Export PDF
+              Export PDF
             </button>
           </div>
 

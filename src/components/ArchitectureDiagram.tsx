@@ -1,3 +1,4 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 export default function ArchitectureDiagram() {
@@ -19,13 +20,13 @@ export default function ArchitectureDiagram() {
             </span>
             <div className="flex gap-4 flex-1 justify-center">
               {[
-                { icon: "📗", label: "Google Sheets\n(Financial Data)" },
-                { icon: "📘", label: "Google Sheets\n(Operations Data)" },
-                { icon: "📙", label: "Google Sheets\n(HR / Team Data)" },
-                { icon: "📂", label: "Google Drive\n(Documents)" },
+                { icon: "sheet" as const, label: "Google Sheets\n(Financial Data)" },
+                { icon: "sheet" as const, label: "Google Sheets\n(Operations Data)" },
+                { icon: "sheet" as const, label: "Google Sheets\n(HR / Team Data)" },
+                { icon: "folder" as const, label: "Google Drive\n(Documents)" },
               ].map((s, i) => (
                 <div key={i} className="bg-green-50 border border-green-200 rounded-xl p-4 text-center w-40">
-                  <div className="text-2xl mb-1">{s.icon}</div>
+                  <div className="w-9 h-9 rounded-lg bg-green-600/80 flex items-center justify-center mb-2 mx-auto"><Icon name={s.icon} size={16} className="text-white" /></div>
                   <div className="text-xs font-medium text-slate-700 whitespace-pre-line">{s.label}</div>
                   <div className="text-[9px] text-green-600 mt-1 font-medium">EXISTING</div>
                 </div>
@@ -54,17 +55,17 @@ export default function ArchitectureDiagram() {
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-white rounded-xl p-3 border border-blue-200 text-center">
-                  <div className="text-lg mb-1">📥</div>
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/80 flex items-center justify-center mb-1 mx-auto"><Icon name="download" size={14} className="text-white" /></div>
                   <div className="text-xs font-semibold text-slate-700">Data Collector</div>
                   <div className="text-[10px] text-slate-400 mt-1">Scheduled pulls via Cloud Scheduler</div>
                 </div>
                 <div className="bg-white rounded-xl p-3 border border-blue-200 text-center">
-                  <div className="text-lg mb-1">🔍</div>
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/80 flex items-center justify-center mb-1 mx-auto"><Icon name="search" size={14} className="text-white" /></div>
                   <div className="text-xs font-semibold text-slate-700">Validator</div>
                   <div className="text-[10px] text-slate-400 mt-1">Schema + Data Quality Scoring</div>
                 </div>
                 <div className="bg-white rounded-xl p-3 border border-blue-200 text-center">
-                  <div className="text-lg mb-1">🔄</div>
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/80 flex items-center justify-center mb-1 mx-auto"><Icon name="refresh" size={14} className="text-white" /></div>
                   <div className="text-xs font-semibold text-slate-700">Transformer</div>
                   <div className="text-[10px] text-slate-400 mt-1">Normalize + Calculate KPIs</div>
                 </div>
@@ -89,11 +90,11 @@ export default function ArchitectureDiagram() {
             </span>
             <div className="bg-purple-50 border-2 border-purple-300 rounded-2xl p-6 flex-1 max-w-3xl">
               <div className="text-center text-xs font-bold text-purple-700 uppercase tracking-wider mb-4">
-                🤖 Vendor-Proposed AI/LLM: OpenAI GPT-4o (see Section 03)
+                ⬡ Vendor-Proposed AI/LLM: OpenAI GPT-4o (see Section 03)
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-xl p-4 border border-purple-200">
-                  <div className="text-lg mb-1">🤖</div>
+                  <div className="w-8 h-8 rounded-lg bg-purple-500/80 flex items-center justify-center mb-1 mx-auto"><Icon name="bot" size={14} className="text-white" /></div>
                   <div className="text-sm font-semibold text-slate-700">LLM Summarization</div>
                   <div className="text-xs text-slate-400 mt-1">OpenAI GPT-4o API</div>
                   <div className="text-[10px] text-slate-500 mt-2">
@@ -101,7 +102,7 @@ export default function ArchitectureDiagram() {
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-purple-200">
-                  <div className="text-lg mb-1">📋</div>
+                  <div className="w-8 h-8 rounded-lg bg-purple-500/80 flex items-center justify-center mb-1 mx-auto"><Icon name="clipboard" size={14} className="text-white" /></div>
                   <div className="text-sm font-semibold text-slate-700">Template Engine</div>
                   <div className="text-xs text-slate-400 mt-1">Report Formatting</div>
                   <div className="text-[10px] text-slate-500 mt-2">
@@ -129,13 +130,13 @@ export default function ArchitectureDiagram() {
             </span>
             <div className="flex gap-4 flex-1 justify-center">
               {[
-                { icon: "📊", label: "Looker Studio\nDashboard", tag: "EXISTING" },
-                { icon: "📧", label: "Google Workspace\nEmail Distribution", tag: "EXISTING" },
-                { icon: "📄", label: "Google Docs\nReport Archive", tag: "EXISTING" },
-                { icon: "🔔", label: "Alert\nNotifications", tag: "NEW" },
+                { icon: "dashboard" as const, label: "Looker Studio\nDashboard", tag: "EXISTING" },
+                { icon: "mail" as const, label: "Google Workspace\nEmail Distribution", tag: "EXISTING" },
+                { icon: "file" as const, label: "Google Docs\nReport Archive", tag: "EXISTING" },
+                { icon: "bell" as const, label: "Alert\nNotifications", tag: "NEW" },
               ].map((s, i) => (
                 <div key={i} className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center w-40">
-                  <div className="text-2xl mb-1">{s.icon}</div>
+                  <div className="w-9 h-9 rounded-lg bg-green-600/80 flex items-center justify-center mb-2 mx-auto"><Icon name={s.icon} size={16} className="text-white" /></div>
                   <div className="text-xs font-medium text-slate-700 whitespace-pre-line">{s.label}</div>
                   <div className={`text-[9px] mt-1 font-medium ${s.tag === "EXISTING" ? "text-green-600" : "text-blue-600"}`}>
                     {s.tag}
@@ -148,17 +149,17 @@ export default function ArchitectureDiagram() {
           {/* Cross-cutting concerns */}
           <div className="mt-8 bg-slate-100 rounded-2xl p-6 border border-slate-300">
             <div className="text-center text-xs font-bold text-slate-600 uppercase tracking-wider mb-4">
-              🛡️ Cross-Cutting Concerns (Built by Vendor)
+              ⬡ Cross-Cutting Concerns (Built by Vendor)
             </div>
             <div className="grid grid-cols-4 gap-3">
               {[
-                { icon: "🔐", label: "Auth & Permissions", desc: "Service accounts, OAuth, least-privilege" },
-                { icon: "📝", label: "Logging & Audit", desc: "Cloud Logging, run history, data lineage" },
-                { icon: "⚠️", label: "Error Handling", desc: "Retry logic, alerts, dead letter queue" },
-                { icon: "👤", label: "Admin Interface", desc: "Config schedules, recipients, parameters" },
+                { icon: "lock" as const, label: "Auth & Permissions", desc: "Service accounts, OAuth, least-privilege" },
+                { icon: "file" as const, label: "Logging & Audit", desc: "Cloud Logging, run history, data lineage" },
+                { icon: "warning" as const, label: "Error Handling", desc: "Retry logic, alerts, dead letter queue" },
+                { icon: "user" as const, label: "Admin Interface", desc: "Config schedules, recipients, parameters" },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-xl p-3 text-center border border-slate-200">
-                  <div className="text-lg">{item.icon}</div>
+                  <div className="w-8 h-8 rounded-lg bg-slate-600 flex items-center justify-center mx-auto"><Icon name={item.icon} size={14} className="text-white" /></div>
                   <div className="text-xs font-semibold text-slate-700 mt-1">{item.label}</div>
                   <div className="text-[10px] text-slate-400">{item.desc}</div>
                 </div>

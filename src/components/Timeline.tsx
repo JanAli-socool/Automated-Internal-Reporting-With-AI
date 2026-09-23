@@ -151,7 +151,7 @@ export default function Timeline() {
                     <h3 className="text-lg font-bold text-slate-900">{phase.phase}</h3>
                   </div>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
-                    🕐 {phase.hours}
+                    {phase.hours}
                   </span>
                 </div>
 

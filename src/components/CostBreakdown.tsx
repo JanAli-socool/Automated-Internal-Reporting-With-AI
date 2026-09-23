@@ -1,3 +1,4 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 const developmentCosts = [
@@ -181,7 +182,7 @@ const recurringCosts = [
     item: "Post-Launch Support Retainer (Optional)",
     estimate: "$500–$700/month",
     notes:
-      "Optional retainer for ongoing monitoring, prompt refinement, bug fixes, and minor enhancements. Includes up to 10 hours/month at the same $40/hr project rate.",
+      "Optional retainer for ongoing monitoring, prompt refinement, bug fixes, and minor enhancements. Includes 13–17 hrs/month at $40/hr base rate, plus a small availability premium for dedicated monthly priority access.",
     required: false,
     paidBy: "TeamFicient → Vendor",
   },
@@ -199,7 +200,7 @@ export default function CostBreakdown() {
       {/* ==================== PART 1: Development Costs ==================== */}
       <div className="mb-16">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-2xl">💰</span>
+          <Icon name="dollar" size={22} className="text-blue-600" />
           <h3 className="text-xl font-bold text-slate-900">
             Part 1: One-Time Development Costs
           </h3>
@@ -245,7 +246,7 @@ export default function CostBreakdown() {
 
         {/* Payment structure */}
         <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6">
-          <h4 className="font-bold text-blue-900 mb-3">💳 Suggested Payment Structure</h4>
+          <h4 className="font-bold text-blue-900 mb-3 flex items-center gap-2"><Icon name="dollar" size={18} className="text-blue-700" /> Suggested Payment Structure</h4>
           <div className="grid sm:grid-cols-3 gap-4">
             <div className="bg-white rounded-lg p-4 border border-blue-200 text-center">
               <div className="text-sm text-blue-600 font-medium">Milestone 1</div>
@@ -269,7 +270,7 @@ export default function CostBreakdown() {
       {/* ==================== PART 2: Third-Party Platform Costs ==================== */}
       <div className="mb-16">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-2xl">🏗️</span>
+          <Icon name="building" size={22} className="text-blue-600" />
           <h3 className="text-xl font-bold text-slate-900">
             Part 2: Third-Party Platform Costs
           </h3>
@@ -340,7 +341,7 @@ export default function CostBreakdown() {
       {/* ==================== PART 3: Recurring / Usage-Based Costs ==================== */}
       <div>
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-2xl">🔄</span>
+          <Icon name="refresh" size={22} className="text-blue-600" />
           <h3 className="text-xl font-bold text-slate-900">
             Part 3: Recurring & Usage-Based Costs
           </h3>
@@ -383,7 +384,7 @@ export default function CostBreakdown() {
 
         <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-8">
           <div className="flex items-start gap-3">
-            <span className="text-2xl">💡</span>
+            <Icon name="lightbulb" size={22} className="text-green-600" />
             <div>
               <h4 className="font-bold text-green-900 mb-1">
                 Total Estimated Monthly Running Cost
@@ -398,7 +399,7 @@ export default function CostBreakdown() {
 
         {/* Grand summary */}
         <div className="bg-slate-900 rounded-2xl p-8 text-white">
-          <h3 className="text-xl font-bold mb-6">📊 Complete Investment Summary</h3>
+          <h3 className="text-xl font-bold mb-6 flex items-center gap-2"><Icon name="chart" size={20} className="text-cyan-300" /> Complete Investment Summary</h3>
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="bg-white/10 rounded-xl p-5 backdrop-blur-sm text-center">
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Development</div>

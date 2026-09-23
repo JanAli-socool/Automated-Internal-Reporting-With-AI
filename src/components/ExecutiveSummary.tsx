@@ -1,3 +1,4 @@
+import Icon from "./Icon";
 import SectionWrapper from "./SectionWrapper";
 
 export default function ExecutiveSummary() {
@@ -13,7 +14,7 @@ export default function ExecutiveSummary() {
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
             <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <span className="text-2xl">🎯</span> Proposed Solution
+              <Icon name="target" size={22} className="text-blue-600" /> Proposed Solution
             </h3>
             <p className="text-slate-600 leading-relaxed mb-4">
               I propose building an <strong>end-to-end AI-powered internal reporting automation system</strong> that
@@ -47,7 +48,7 @@ export default function ExecutiveSummary() {
 
           <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100">
             <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <span className="text-2xl">💡</span> Recommended Approach
+              <Icon name="lightbulb" size={22} className="text-blue-600" /> Recommended Approach
             </h3>
             <p className="text-slate-600 leading-relaxed mb-4">
               Rather than building a heavy custom application, I recommend a <strong>composable
@@ -77,7 +78,7 @@ export default function ExecutiveSummary() {
         {/* Side highlights */}
         <div className="space-y-6">
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
-            <h4 className="font-bold text-slate-900 mb-4">📊 Expected Business Value</h4>
+            <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2"><Icon name="chart" size={18} className="text-blue-600" /> Expected Business Value</h4>
             <div className="space-y-4">
               {[
                 { metric: "Time Saved", value: "80–90%", desc: "reduction in report prep time" },
@@ -95,7 +96,7 @@ export default function ExecutiveSummary() {
           </div>
 
           <div className="bg-slate-900 rounded-2xl p-6 text-white">
-            <h4 className="font-bold mb-3">🛠 Technology Stack</h4>
+            <h4 className="font-bold mb-3 flex items-center gap-2"><Icon name="layers" size={16} className="text-cyan-400" /> Technology Stack</h4>
             <div className="space-y-1 text-sm">
               <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
                 Existing (TeamFicient)
@@ -129,7 +130,7 @@ export default function ExecutiveSummary() {
           </div>
 
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
-            <h4 className="font-bold text-amber-900 mb-2 text-sm">⚡ Discovery-First Promise</h4>
+            <h4 className="font-bold text-amber-900 mb-2 text-sm flex items-center gap-2"><Icon name="zap" size={15} className="text-amber-700" /> Discovery-First Promise</h4>
             <p className="text-xs text-amber-800 leading-relaxed">
               I will validate the current environment during discovery and provide a
               complete inventory of all additional software, APIs, hosting, AI models,
